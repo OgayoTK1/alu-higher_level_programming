@@ -1,2 +1,2 @@
-ogayo develop
+ogayo developer
 
