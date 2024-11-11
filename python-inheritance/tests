@@ -1,0 +1,34 @@
+#!/usr/bin/python3
+# Test instantiation of BaseGeometry and validation
+bg = BaseGeometry()
+print(dir(bg))  # Should show 'area' and 'integer_validator'
+
+# Test integer_validator
+bg.integer_validator("age", 12)     # Should pass
+bg.integer_validator("width", 89)   # Should pass
+
+try:
+    bg.integer_validator("name", "John")  # Should raise TypeError
+except Exception as e:
+    print(f"[{e.__class__.__name__}] {e}")
+
+try:
+    bg.integer_validator("age", 0)  # Should raise ValueError
+except Exception as e:
+    print(f"[{e.__class__.__name__}] {e}")
+
+try:
+    bg.integer_validator("age", -4)  # Should raise ValueError
+except Exception as e:
+    print(f"[{e.__class__.__name__}] {e}")
+
+try:
+    bg.integer_validator("age", 13.5)  # Should raise TypeError
+except Exception as e:
+    print(f"[{e.__class__.__name__}] {e}")
+
+try:
+    bg.area()  # Should raise Exception
+except Exception as e:
+    print(f"[{e.__class__.__name__}] {e}")
+
