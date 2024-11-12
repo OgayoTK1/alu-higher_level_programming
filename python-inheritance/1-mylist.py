@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""MyList class"""
+"""Module for MyList class."""
 
 
 class MyList(list):
-    """MyList class"""
+    """Custom list class."""
 
     def print_sorted(self):
-        """Prints the list, but sorted"""
-        print(sorted(self))
+        """Prints the list in ascending order."""
+        print(sorted(self))i
